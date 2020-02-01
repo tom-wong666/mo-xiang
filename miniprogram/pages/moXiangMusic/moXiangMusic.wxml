@@ -1,0 +1,4 @@
+<!--miniprogram/pages/moXiangMusic/moXiangMusic.wxml-->
+<view>
+  <text>音乐测试</text>
+</view>

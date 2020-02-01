@@ -1,0 +1,18 @@
+<!--miniprogram/pages/moXiangNews/moXiangNews.wxml-->
+<view>
+  <music-controls></music-controls>
+</view>
+<view class="scroll-view">
+  <text class="text">1、世卫组织宣布疫情为国际关注的突发公共卫生事件，强调不建议实施旅行和贸易限制。</text>
+  <text class="text">2、国家卫健委：已治愈患者仍有再次感染可能。</text>
+  <text class="text">3、2月1日起购买火车票须提供手机号。</text>
+  <text class="text">4、武大中南医院ICU医护连续作战25天：八成重患脱离危险。</text>
+  <text class="text">5、海关总署：24日至30日共进口口罩5622.8万个。</text>
+  <text class="text">6、厦门正式上线购买口罩预约系统，需摇号抽签到线下门店购买。</text>
+  <text class="text">7、湖北捣毁一野生动物经销点，查获麂、鼬獾。</text>
+  <text class="text">8、北京市政府发文：2月10日前必需行业企业安排职工到单位上班，其他企业应安排职工灵活完成工作</text>
+  <text class="text">9、多地禁止城区居民户外遛狗，农村只能院内圈养。</text>
+  <text class="text">10、中央应对疫情工作领导小组：同意湖北将春节假期适当延长。</text>
+  <text class="text">11、新加坡2月2日起禁止过去14天曾到中国的旅客入境。</text>
+  <text class="text">12、探访美国新冠病毒疫苗实验室：美国疫苗有望初夏前人体试验。</text>
+</view>

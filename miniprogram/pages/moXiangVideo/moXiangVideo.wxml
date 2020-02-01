@@ -1,0 +1,4 @@
+<!--miniprogram/pages/moXiangVideo/moXiangVideo.wxml-->
+<view>
+  <video src="cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/video/kbVideo00001.mp4"></video>
+</view>

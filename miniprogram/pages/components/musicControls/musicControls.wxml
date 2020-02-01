@@ -1,0 +1,9 @@
+<!--pages/components/musicControls/musicControls.wxml-->
+<view>
+  <button bind:tap="playMusic">
+    播放
+  </button>
+  <button bind:tap="pauseMusic">
+    暂停
+  </button>
+</view>

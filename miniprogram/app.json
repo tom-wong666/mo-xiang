@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/moXiangNews/moXiangNews",
+    "pages/moXiangVideo/moXiangVideo",
+    "pages/moXiangMusic/moXiangMusic",
+    "pages/moXiangJoke/moXiangJoke"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "list": [
+      {
+        "text": "看新闻",
+        "pagePath": "pages/moXiangNews/moXiangNews"
+      },
+      {
+        "text": "赏影视",
+        "pagePath": "pages/moXiangVideo/moXiangVideo"
+      },
+      {
+        "text": "听音乐",
+        "pagePath": "pages/moXiangMusic/moXiangMusic"
+      },
+      {
+        "text": "赞段子",
+        "pagePath": "pages/moXiangJoke/moXiangJoke"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000
+  }
+}
