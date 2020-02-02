@@ -1,2 +1,4 @@
 <!--miniprogram/pages/moXiangJoke/moXiangJoke.wxml-->
-<text>赞段子</text>
+<view>
+  <music-controls></music-controls>
+</view>

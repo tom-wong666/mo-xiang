@@ -1,9 +1,26 @@
 <!--pages/components/musicControls/musicControls.wxml-->
-<view>
-  <button bind:tap="playMusic">
-    播放
-  </button>
-  <button bind:tap="pauseMusic">
-    暂停
-  </button>
+<view class="music">
+  <view class="music-info">
+    <text class="music-info-text">{{musicInfo}}</text>
+  </view>
+  <view class="music-control">
+    <button class="control-item" bind:tap="playLastMusic">
+      上一首
+    </button>
+    <button class="control-item" bind:tap="playPauseMusic">
+      {{playStatus}}
+    </button>
+    <button class="control-item" bind:tap="playNextMusic">
+      下一首
+    </button>
+    <button class="control-item" bind:tap="repeatMusic">
+      重播
+    </button>
+    <button class="control-item" bind:tap="showHideList">
+      {{isShowListText}}
+    </button>
+  </view>
+  <view class="{{musicNameListClass}}">
+    <button data-index="{{index}}" class="music-list-item" wx:for="{{musicNameList}}" wx:key="index" bind:tap="selectMusic">{{item}}</button>
+  </view>
 </view>

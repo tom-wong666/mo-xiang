@@ -1,8 +1,6 @@
 <!--miniprogram/pages/moXiangNews/moXiangNews.wxml-->
-<view>
+<view class="view-news">
   <music-controls></music-controls>
-</view>
-<view class="scroll-view">
   <text class="text">1、世卫组织宣布疫情为国际关注的突发公共卫生事件，强调不建议实施旅行和贸易限制。</text>
   <text class="text">2、国家卫健委：已治愈患者仍有再次感染可能。</text>
   <text class="text">3、2月1日起购买火车票须提供手机号。</text>
