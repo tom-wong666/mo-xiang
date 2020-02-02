@@ -38,7 +38,8 @@ Component({
     isShowListText: isShowListText,
     musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
     musicNameList: musicList.map(_ => _.author + '-' + _.name),
-    musicNameListClass: 'music-list music-list-hidden'
+    musicNameListClass: 'music-list music-list-hidden',
+    musicIndex: musicIndex
   },
 
   /**
@@ -66,6 +67,8 @@ Component({
       innerAudioContext.onError((res) => {
         console.log(res.errMsg)
         console.log(res.errCode)
+        // 重新调用play，处理安卓机型不能播放问题
+        innerAudioContext.play()
       })
     },
     toggleMusic() {
@@ -89,6 +92,9 @@ Component({
       if (musicIndex === -1) {
         musicIndex = musicList.length - 1
       }
+      this.setData({
+        musicIndex: musicIndex
+      })
       this.toggleMusic()
     },
     playPauseMusic() {
@@ -117,6 +123,9 @@ Component({
       if (musicIndex > (musicList.length-1)) {
         musicIndex = 0
       }
+      this.setData({
+        musicIndex: musicIndex
+      })
       this.toggleMusic()
     },
     repeatMusic() {
@@ -134,6 +143,9 @@ Component({
         this.repeatMusic()
       } else {
         musicIndex = selectedIndex
+        this.setData({
+          musicIndex: musicIndex
+        })
         this.toggleMusic()
       }
     },

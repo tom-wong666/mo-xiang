@@ -21,6 +21,6 @@
     </button>
   </view>
   <view class="{{musicNameListClass}}">
-    <button data-index="{{index}}" class="music-list-item" wx:for="{{musicNameList}}" wx:key="index" bind:tap="selectMusic">{{item}}</button>
+    <button data-index="{{index}}" class="{{index===musicIndex?'music-list-item music-list-item-current':'music-list-item'}}" wx:for="{{musicNameList}}" wx:key="index" bind:tap="selectMusic">{{item}}</button>
   </view>
 </view>

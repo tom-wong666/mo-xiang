@@ -31,4 +31,8 @@
   display: block;
   padding: 5rpx;
   text-align: right;
+  color: #ff677d;
+}
+.music-list-item-current {
+  color: #000;
 }
