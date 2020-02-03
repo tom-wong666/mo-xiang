@@ -179,9 +179,19 @@ Component({
       })
     },
     hide: function () {
+      // 重置播放文本
       this.setData({
         playStatus: ''
       })
+      // 隐藏播放列表
+      this.setData({
+        musicNameListClass: 'music-list music-list-hidden'
+      })
+      this.setData({
+        isShowListText: '显示歌单'
+      })
+      isShowListText = '显示歌单'
+      isShowListFlag = false
     }
   }
 })
