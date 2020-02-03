@@ -2,7 +2,6 @@
   "pages": [
     "pages/moXiangVideo/moXiangVideo",
     "pages/moXiangNews/moXiangNews",
-    "pages/moXiangMusic/moXiangMusic",
     "pages/moXiangJoke/moXiangJoke"
   ],
   "window": {
@@ -23,10 +22,6 @@
       {
         "text": "赏影视",
         "pagePath": "pages/moXiangVideo/moXiangVideo"
-      },
-      {
-        "text": "听音乐",
-        "pagePath": "pages/moXiangMusic/moXiangMusic"
       },
       {
         "text": "赞段子",
