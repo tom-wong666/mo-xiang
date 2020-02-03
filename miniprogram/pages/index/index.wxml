@@ -15,13 +15,6 @@
     </view>
   </view>
 
-  <!-- 进入默享页面 -->
-  <view class="uploader">
-    <navigator url="../moXiangIndex/moXiangIndex" open-type="navigate" class="uploader-text">
-      <text>进入默享页面</text>
-    </navigator>
-  </view>
-
   <!-- 上传图片 -->
   <view class="uploader">
     <view class="uploader-text" bindtap="doUpload">

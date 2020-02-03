@@ -2,7 +2,8 @@
   "pages": [
     "pages/moXiangVideo/moXiangVideo",
     "pages/moXiangNews/moXiangNews",
-    "pages/moXiangJoke/moXiangJoke"
+    "pages/moXiangJoke/moXiangJoke",
+    "pages/index/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -26,6 +27,10 @@
       {
         "text": "赞段子",
         "pagePath": "pages/moXiangJoke/moXiangJoke"
+      },
+      {
+        "text": "示例",
+        "pagePath": "pages/index/index"
       }
     ]
   },
