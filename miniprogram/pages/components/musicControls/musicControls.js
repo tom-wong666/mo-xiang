@@ -36,6 +36,9 @@ Component({
   data: {
     playStatus: musicPlayText,
     isShowListText: isShowListText,
+    playLastMusicText: '上一首',
+    playNextMusicText: '下一首',
+    repeatMusicText: '重播',
     musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
     musicNameList: musicList.map(_ => _.author + '-' + _.name),
     musicNameListClass: 'music-list music-list-hidden',
@@ -171,26 +174,39 @@ Component({
     }
   },
 
+  lifeTimes: {
+    attached: function() {
+      console.log('进入attached')
+    }
+  },
+
   pageLifetimes: {
     // 同步播放按钮文本
     show: function() {
       this.setData({
-        playStatus: musicPlayText
+        playStatus: musicPlayText,
+        playLastMusicText: '上一首',
+        playNextMusicText: '下一首',
+        repeatMusicText: '重播',
+        isShowListText: '显示歌单',
+        musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
       })
     },
     hide: function () {
       // 重置播放文本
       this.setData({
-        playStatus: ''
+        playStatus: '',
+        playLastMusicText: '',
+        playNextMusicText: '',
+        repeatMusicText: '',
+        isShowListText: '',
+        musicInfo: ''
       })
       // 隐藏播放列表
       this.setData({
         musicNameListClass: 'music-list music-list-hidden'
       })
-      this.setData({
-        isShowListText: '显示歌单'
-      })
-      isShowListText = '显示歌单'
+      isShowListText = ''
       isShowListFlag = false
     }
   }

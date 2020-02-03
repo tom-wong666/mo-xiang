@@ -5,16 +5,16 @@
   </view>
   <view class="music-control">
     <button class="control-item" bind:tap="playLastMusic">
-      上一首
+      {{playLastMusicText}}
     </button>
     <button class="control-item" bind:tap="playPauseMusic">
       {{playStatus}}
     </button>
     <button class="control-item" bind:tap="playNextMusic">
-      下一首
+      {{playNextMusicText}}
     </button>
     <button class="control-item" bind:tap="repeatMusic">
-      重播
+      {{repeatMusicText}}
     </button>
     <button class="control-item" bind:tap="showHideList">
       {{isShowListText}}

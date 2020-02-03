@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/moXiangVideo/moXiangVideo",
     "pages/moXiangNews/moXiangNews",
+    "pages/moXiangVideo/moXiangVideo",
     "pages/moXiangJoke/moXiangJoke",
     "pages/index/index"
   ],

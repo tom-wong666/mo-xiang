@@ -1,6 +1,7 @@
 /* pages/components/musicControls/musicControls.wxss */
 .music {
   position: relative;
+  height: 90rpx;
 }
 .music-info {
   color: #ff677d; 
