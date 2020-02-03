@@ -181,8 +181,8 @@ Component({
   },
 
   pageLifetimes: {
-    // 同步播放按钮文本
     show: function() {
+      // 同步相关文本
       this.setData({
         playStatus: musicPlayText,
         playLastMusicText: '上一首',
@@ -191,21 +191,24 @@ Component({
         isShowListText: '显示歌单',
         musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
       })
+      // 如果显示的时候音乐处于播放状态，则播放音乐
+      if (isMusicOnPlay === true) {
+        isMusicOnPlay = false
+        this.playPauseMusic()
+      }
     },
     hide: function () {
-      // 重置播放文本
+      // 重置相关文本
       this.setData({
         playStatus: '',
         playLastMusicText: '',
         playNextMusicText: '',
         repeatMusicText: '',
         isShowListText: '',
-        musicInfo: ''
-      })
-      // 隐藏播放列表
-      this.setData({
+        musicInfo: '',
         musicNameListClass: 'music-list music-list-hidden'
       })
+      // 初始化歌单状态
       isShowListText = ''
       isShowListFlag = false
     }
