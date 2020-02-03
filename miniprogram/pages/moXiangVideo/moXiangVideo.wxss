@@ -1,1 +1,13 @@
 /* miniprogram/pages/moXiangVideo/moXiangVideo.wxss */
+.view-video {
+  padding: 10rpx;
+}
+.video-item {
+  margin-bottom: 20rpx;
+}
+.video-player {
+  width: 100%;
+}
+.video-text {
+  display: block;
+}

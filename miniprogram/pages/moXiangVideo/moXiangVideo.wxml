@@ -1,4 +1,11 @@
 <!--miniprogram/pages/moXiangVideo/moXiangVideo.wxml-->
-<view>
-  <video src="cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/video/kbVideo00001.mp4"></video>
+<view class="view-video">
+  <view class="video-item">
+    <video class="video-player" src="cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/video/捉妖记2-坏妖王来袭.mp4"></video>
+    <text class="video-text">捉妖记2-坏妖王来袭</text>
+  </view>
+  <view class="video-item">
+    <video class="video-player" src="cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/video/生活大爆炸-父母对弈.mp4"></video>
+    <text class="video-text">生活大爆炸-父母对弈</text>
+  </view>
 </view>
