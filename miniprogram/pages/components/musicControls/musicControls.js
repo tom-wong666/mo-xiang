@@ -6,8 +6,7 @@ let innerAudioContext = null
 // let isOnPlayTest = false
 let musicIndex = 0
 let isMusicOnPlay = false
-let musicPlayText = '播放'
-let isShowListText = '显示歌单'
+let musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png'
 let isShowListFlag = false
 let musicList = [
     { name: '漂洋过海来看你', author: '周深', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/周深 - 漂洋过海来看你.mp3' },
@@ -34,11 +33,11 @@ Component({
    * 每个实例都会初始化一次的数据
    */
   data: {
-    playStatus: musicPlayText,
-    isShowListText: isShowListText,
-    playLastMusicText: '上一首',
-    playNextMusicText: '下一首',
-    repeatMusicText: '重播',
+    playStatus: musicPlayTextSRC,
+    playLastMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/上一首.png',
+    playNextMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/下一首.png',
+    repeatMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/重播.png',
+    showHideListSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/歌单.png',
     musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
     musicNameList: musicList.map(_ => _.author + '-' + _.name),
     musicNameListClass: 'music-list music-list-hidden',
@@ -85,10 +84,10 @@ Component({
       innerAudioContext.src = musicList[musicIndex].url
       innerAudioContext.play()
       this.setData({
-        playStatus: '暂停'
+        playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
       })
       isMusicOnPlay = true
-      musicPlayText = '暂停'
+      musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
     },
     playLastMusic() {
       musicIndex = musicIndex - 1
@@ -108,17 +107,17 @@ Component({
         innerAudioContext.src = musicList[musicIndex].url
         innerAudioContext.play()
         this.setData({
-          playStatus: '暂停'
+          playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
         })
         isMusicOnPlay = true
-        musicPlayText = '暂停'
+        musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
       } else {
         innerAudioContext.pause()
         this.setData({
-          playStatus: '播放'
+          playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png'
         })
         isMusicOnPlay = false
-        musicPlayText = '播放'
+        musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png'
       }
     },
     playNextMusic() {
@@ -157,18 +156,10 @@ Component({
         this.setData({
           musicNameListClass: 'music-list music-list-hidden'
         })
-        this.setData({
-          isShowListText: '显示歌单'
-        })
-        isShowListText = '显示歌单'
       } else {
         this.setData({
           musicNameListClass: 'music-list'
         })
-        this.setData({
-          isShowListText: '隐藏歌单'
-        })
-        isShowListText = '隐藏歌单'
       }
       isShowListFlag = !isShowListFlag
     }
@@ -184,12 +175,12 @@ Component({
     show: function() {
       // 同步相关文本
       this.setData({
-        playStatus: musicPlayText,
-        playLastMusicText: '上一首',
-        playNextMusicText: '下一首',
-        repeatMusicText: '重播',
-        isShowListText: '显示歌单',
+        playStatus: musicPlayTextSRC,
         musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
+        playLastMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/上一首.png',
+        playNextMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/下一首.png',
+        repeatMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/重播.png',
+        showHideListSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/歌单.png'
       })
       // 如果显示的时候音乐处于播放状态，则播放音乐
       if (isMusicOnPlay === true) {
@@ -201,15 +192,14 @@ Component({
       // 重置相关文本
       this.setData({
         playStatus: '',
-        playLastMusicText: '',
-        playNextMusicText: '',
-        repeatMusicText: '',
-        isShowListText: '',
         musicInfo: '',
+        playLastMusicSRC: '',
+        playNextMusicSRC: '',
+        repeatMusicSRC: '',
+        showHideListSRC: '',
         musicNameListClass: 'music-list music-list-hidden'
       })
       // 初始化歌单状态
-      isShowListText = ''
       isShowListFlag = false
     }
   }

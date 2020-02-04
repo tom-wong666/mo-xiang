@@ -1,24 +1,16 @@
 <!--pages/components/musicControls/musicControls.wxml-->
 <view class="music">
-  <view class="music-info">
-    <text class="music-info-text">{{musicInfo}}</text>
-  </view>
   <view class="music-control">
-    <button class="control-item" bind:tap="playLastMusic">
-      {{playLastMusicText}}
-    </button>
-    <button class="control-item" bind:tap="playPauseMusic">
-      {{playStatus}}
-    </button>
-    <button class="control-item" bind:tap="playNextMusic">
-      {{playNextMusicText}}
-    </button>
-    <button class="control-item" bind:tap="repeatMusic">
-      {{repeatMusicText}}
-    </button>
-    <button class="control-item" bind:tap="showHideList">
-      {{isShowListText}}
-    </button>
+    <view class="control-left">
+        <image style="width:64rpx;height:64rpx;" src="{{playLastMusicSRC}}" bind:tap="playLastMusic"></image>
+        <image style="width:64rpx;height:64rpx;" src="{{playStatus}}" bind:tap="playPauseMusic"></image>
+        <image style="width:64rpx;height:64rpx;" src="{{playNextMusicSRC}}" bind:tap="playNextMusic"></image>
+        <image style="width:64rpx;height:64rpx;" src="{{repeatMusicSRC}}" bind:tap="repeatMusic"></image>
+    </view>
+    <view class="music-info">
+      <text class="music-info-text">{{musicInfo}}</text>
+    </view>
+    <image style="width:64rpx;height:64rpx;" src="{{showHideListSRC}}" bind:tap="showHideList"></image>
   </view>
   <view class="{{musicNameListClass}}">
     <button data-index="{{index}}" class="{{index===musicIndex?'music-list-item music-list-item-current':'music-list-item'}}" wx:for="{{musicNameList}}" wx:key="index" bind:tap="selectMusic">{{item}}</button>

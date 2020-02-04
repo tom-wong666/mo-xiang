@@ -2,22 +2,37 @@
 .music {
   position: relative;
   height: 90rpx;
-}
-.music-info {
-  color: #ff677d; 
-}
-.music-info-text {
-  font-weight: bold; 
+  margin-bottom: 15rpx;
 }
 .music-control {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.control-item {
-  display: inline-block;
-  padding: 0;
+.control-left {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.music-info {
   color: #ff677d;
+  width: 40%;
+  overflow: hidden;
+}
+.music-info-text {
+  font-weight: bold; 
+  display: inline-block;
+  width: 400rpx;
+  animation: toLeft 6s linear infinite;
+}
+@keyframes toLeft {
+  0% {
+    margin-left: 300rpx;
+  }
+  100% {
+    margin-left: -400rpx;
+  }
 }
 .music-list {
   background: #fff;
