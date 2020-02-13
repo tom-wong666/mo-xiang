@@ -1,5 +1,0 @@
-{
-  "usingComponents": {
-    "music-controls": "../components/musicControls/musicControls"
-  }
-}
