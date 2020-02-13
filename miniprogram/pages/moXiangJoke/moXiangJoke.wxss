@@ -1,7 +1,0 @@
-/* miniprogram/pages/moXiangJoke/moXiangJoke.wxss */
-.view-joke {
-  padding: 10rpx;
-}
-.joke-item {
-  margin-bottom: 15rpx;
-}

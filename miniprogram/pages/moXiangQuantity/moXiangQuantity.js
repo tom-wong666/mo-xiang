@@ -1,4 +1,4 @@
-// miniprogram/pages/moXiangNews/moXiangNews.js
+// miniprogram/pages/moXiangQuantity/moXiangQuantity.js
 Page({
 
   /**
@@ -12,17 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.request({
 
-    //   url: 'http://120.77.182.31/home-resource?id=1',
-
-    //   success: function (res) {
-
-    //     console.log(res)// 服务器回包信息
-
-    //   }
-
-    // })
   },
 
   /**

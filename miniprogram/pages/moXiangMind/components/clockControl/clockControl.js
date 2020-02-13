@@ -1,35 +1,45 @@
-// miniprogram/pages/moXiangNews/moXiangNews.js
+// miniprogram/pages/moXiangMind/components/clockControl/clockControl.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    balanceTime: "",
+  },
 
+  /**
+   * 页面方法
+   */
+  methods: {
+    getBalanceTime() {
+      console.log(123)
+    }
+  },
+
+  /**
+   * 非显示数据
+   */
+  extraData: {
+    index: 10
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.request({
 
-    //   url: 'http://120.77.182.31/home-resource?id=1',
-
-    //   success: function (res) {
-
-    //     console.log(res)// 服务器回包信息
-
-    //   }
-
-    // })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    setInterval(() => {
+      this.extraData.index = this.extraData.index - 1
+      console.log('123', this.extraData.index)
+      this.methods.getBalanceTime()
+    }, 1000)
   },
 
   /**

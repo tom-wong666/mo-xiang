@@ -1,8 +1,11 @@
 {
   "pages": [
-    "pages/moXiangNews/moXiangNews",
+    "pages/moXiangMind/moXiangMind",
+    "pages/moXiangMind/components/clockControl/clockControl",
+    "pages/moXiangMusic/moXiangMusic",
     "pages/moXiangVideo/moXiangVideo",
-    "pages/moXiangJoke/moXiangJoke"
+    "pages/moXiangCapital/moXiangCapital",
+    "pages/moXiangQuantity/moXiangQuantity"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -16,16 +19,24 @@
   "tabBar": {
     "list": [
       {
-        "text": "看新闻",
-        "pagePath": "pages/moXiangNews/moXiangNews"
+        "text": "听音乐",
+        "pagePath": "pages/moXiangMusic/moXiangMusic"
       },
       {
         "text": "赏影视",
         "pagePath": "pages/moXiangVideo/moXiangVideo"
       },
       {
-        "text": "赞段子",
-        "pagePath": "pages/moXiangJoke/moXiangJoke"
+        "text": "控手机",
+        "pagePath": "pages/moXiangMind/moXiangMind"
+      },
+      {
+        "text": "转大写",
+        "pagePath": "pages/moXiangCapital/moXiangCapital"
+      },
+      {
+        "text": "算字数",
+        "pagePath": "pages/moXiangQuantity/moXiangQuantity"
       }
     ]
   },

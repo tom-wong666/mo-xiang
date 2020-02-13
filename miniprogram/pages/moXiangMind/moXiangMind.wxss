@@ -1,0 +1,23 @@
+/* miniprogram/pages/moXiangMind/moXiangMind.wxss */
+/* 不允许屏幕关闭 */
+.view-tips {
+  display: flex;
+  justify-content: center;
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+.view-control {
+  display: flex;
+  justify-content: center;
+}
+.navigator {
+  background: #07c160;
+  color: #fff;
+  font-weight: bold;
+  padding: 16px 48px;
+  border-radius: 8rpx;
+  font-size: 34rpx;
+}
+.navigator-hover {
+  color:blue;
+}

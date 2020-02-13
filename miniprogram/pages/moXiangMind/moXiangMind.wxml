@@ -1,0 +1,11 @@
+<!--miniprogram/pages/moXiangMind/moXiangMind.wxml-->
+<view class="mind-view">
+  <view class="view-tips">
+    <text>放下手机，用15分钟陪陪身边的亲友吧！</text>
+  </view>
+  <view class="view-control">
+    <!-- <button type="primary">开始计时</button> -->
+    <!-- <navigator url="pages/moXiangMind/components/clockControl/clockControl">开始计时</navigator> -->
+    <navigator url="/pages/moXiangMind/components/clockControl/clockControl" class="navigator" hover-class="navigator-hover">开始计时</navigator>
+  </view>
+</view>

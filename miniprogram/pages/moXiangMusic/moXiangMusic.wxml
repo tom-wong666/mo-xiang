@@ -1,0 +1,5 @@
+<!--miniprogram/pages/moXiangMusic/moXiangMusic.wxml-->
+<text>今日歌单</text>
+<text>历史歌单</text>
+<music-controls></music-controls>
+<text>播放中动画</text>
