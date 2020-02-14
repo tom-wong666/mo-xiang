@@ -1,1 +1,20 @@
 /* miniprogram/pages/moXiangMind/components/clockControl/clockControl.wxss */
+.clock-view {
+  font-size: 50rpx; 
+}
+.text-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25rpx; 
+}
+.count-status {
+  margin-bottom: 15rpx;
+}
+.control-status {
+  margin-top: 100rpx;
+}
+.give-up {
+  margin-top: 100rpx;
+}

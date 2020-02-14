@@ -1,5 +1,7 @@
 /* miniprogram/pages/moXiangMind/moXiangMind.wxss */
-/* 不允许屏幕关闭 */
+.mind-view {
+  font-size: 40rpx;
+}
 .view-tips {
   display: flex;
   justify-content: center;

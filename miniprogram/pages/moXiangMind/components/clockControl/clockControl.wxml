@@ -1,4 +1,10 @@
 <!--miniprogram/pages/moXiangMind/components/clockControl/clockControl.wxml-->
-<text>{{balanceTime}}</text>
-<button>暂停计时</button>
-<text>放弃</text>
+<view class="clock-view">
+  <view class="text-view">
+    <text class="count-status">{{countStatus}}</text>
+    <text class="balance-time">{{balanceTime}}</text>
+  </view>
+  <progress percent="{{balancePercent}}" stroke-width="12" border-radius="6"></progress>
+  <button class="control-status" type="primary" bind:tap="controlTimer">{{controlStatus}}</button>
+<button class="give-up" type="warn" bind:tap="backToMind">放弃</button>
+</view>
