@@ -1,7 +1,7 @@
 <!--miniprogram/pages/moXiangMind/moXiangMind.wxml-->
 <view class="mind-view">
   <view class="view-tips">
-    <text>放下手机，用15分钟陪陪身边的亲友吧！</text>
+    <text>放下手机，用一刻钟陪陪身边的人吧！</text>
   </view>
   <view class="view-control">
     <!-- <button type="primary">开始计时</button> -->

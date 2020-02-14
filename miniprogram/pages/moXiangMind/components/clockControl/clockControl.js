@@ -1,45 +1,63 @@
 // miniprogram/pages/moXiangMind/components/clockControl/clockControl.js
+// 设置设备常亮
+wx.setKeepScreenOn({
+  keepScreenOn: true
+})
+let time = 15 * 60;
+let timer = 0;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    balanceTime: "",
+    balanceTime: "15:00",
   },
 
   /**
    * 页面方法
    */
   methods: {
-    getBalanceTime() {
-      console.log(123)
+    getBalanceTime(time) {
+      let minute = Math.floor(time / 60)
+      minute = this.formatNumber(minute)
+      let second = time % 60
+      second = this.formatNumber(second)
+      return minute + ':' + second
+    },
+    formatNumber(smallNumber) {
+      if (smallNumber < 10) {
+        return '0' + smallNumber.toString()
+      } else {
+        return smallNumber.toString()
+      }
     }
-  },
-
-  /**
-   * 非显示数据
-   */
-  extraData: {
-    index: 10
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    time = 1 * 10;
+    timer = 0;
+    timer = setInterval(() => {
+      if (time > 0) {
+        time = time - 1
+        const balanceTime = this.methods.getBalanceTime(time)
+        this.setData({
+          balanceTime: balanceTime
+        })
+      } else {
+        clearInterval(timer)
+      }
+    }, 1000)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    setInterval(() => {
-      this.extraData.index = this.extraData.index - 1
-      console.log('123', this.extraData.index)
-      this.methods.getBalanceTime()
-    }, 1000)
+
   },
 
   /**
@@ -60,7 +78,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('timer', timer)
+    clearInterval(timer)
   },
 
   /**

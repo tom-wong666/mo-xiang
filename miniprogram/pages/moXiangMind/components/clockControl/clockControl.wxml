@@ -1,2 +1,4 @@
 <!--miniprogram/pages/moXiangMind/components/clockControl/clockControl.wxml-->
 <text>{{balanceTime}}</text>
+<button>暂停计时</button>
+<text>放弃</text>
