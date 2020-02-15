@@ -1,5 +1,5 @@
 <!--pages/components/musicControls/musicControls.wxml-->
-<view class="music">
+<view class="music-view">
   <view class="music-control">
     <view class="control-left">
         <image style="width:64rpx;height:64rpx;" src="{{playLastMusicSRC}}" bind:tap="playLastMusic"></image>
@@ -14,5 +14,8 @@
   </view>
   <view class="{{musicNameListClass}}">
     <button data-index="{{index}}" class="{{index===musicIndex?'music-list-item music-list-item-current':'music-list-item'}}" wx:for="{{musicNameList}}" wx:key="index" bind:tap="selectMusic">{{item}}</button>
+  </view>
+  <view class="dancing-container">
+    <image class="dancing-img" style="width:640rpx;height:595rpx;" src="{{musicDacing}}"></image>
   </view>
 </view>

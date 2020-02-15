@@ -1,5 +1,5 @@
 /* pages/components/musicControls/musicControls.wxss */
-.music {
+.music-view {
   position: relative;
   height: 90rpx;
   margin-bottom: 15rpx;
@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 100rpx;
 }
 .control-left {
   width: 40%;
@@ -51,4 +52,8 @@
 }
 .music-list-item-current {
   color: #000;
+}
+.dancing-container {
+  margin-top: 200rpx;
+  text-align: center;
 }

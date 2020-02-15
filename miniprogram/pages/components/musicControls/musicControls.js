@@ -41,7 +41,8 @@ Component({
     musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
     musicNameList: musicList.map(_ => _.author + '-' + _.name),
     musicNameListClass: 'music-list music-list-hidden',
-    musicIndex: musicIndex
+    musicIndex: musicIndex,
+    musicDacing: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/嗨.png'
   },
 
   /**
@@ -84,7 +85,8 @@ Component({
       innerAudioContext.src = musicList[musicIndex].url
       innerAudioContext.play()
       this.setData({
-        playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
+        playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png',
+        musicDacing: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/嗨一下.gif'
       })
       isMusicOnPlay = true
       musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
@@ -107,14 +109,16 @@ Component({
         innerAudioContext.src = musicList[musicIndex].url
         innerAudioContext.play()
         this.setData({
-          playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
+          playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png',
+          musicDacing: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/嗨一下.gif'
         })
         isMusicOnPlay = true
         musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/暂停.png'
       } else {
         innerAudioContext.pause()
         this.setData({
-          playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png'
+          playStatus: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png',
+          musicDacing: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/嗨.png'
         })
         isMusicOnPlay = false
         musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png'
@@ -174,14 +178,14 @@ Component({
   pageLifetimes: {
     show: function() {
       // 同步相关文本
-      this.setData({
-        playStatus: musicPlayTextSRC,
-        musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
-        playLastMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/上一首.png',
-        playNextMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/下一首.png',
-        repeatMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/重播.png',
-        showHideListSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/歌单.png'
-      })
+      // this.setData({
+      //   playStatus: musicPlayTextSRC,
+      //   musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
+      //   playLastMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/上一首.png',
+      //   playNextMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/下一首.png',
+      //   repeatMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/重播.png',
+      //   showHideListSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/歌单.png'
+      // })
       // 如果显示的时候音乐处于播放状态，则播放音乐
       if (isMusicOnPlay === true) {
         isMusicOnPlay = false
@@ -190,17 +194,18 @@ Component({
     },
     hide: function () {
       // 重置相关文本
-      this.setData({
-        playStatus: '',
-        musicInfo: '',
-        playLastMusicSRC: '',
-        playNextMusicSRC: '',
-        repeatMusicSRC: '',
-        showHideListSRC: '',
-        musicNameListClass: 'music-list music-list-hidden'
-      })
+      // this.setData({
+      //   playStatus: '',
+      //   musicInfo: '',
+      //   playLastMusicSRC: '',
+      //   playNextMusicSRC: '',
+      //   repeatMusicSRC: '',
+      //   showHideListSRC: '',
+      //   musicNameListClass: 'music-list music-list-hidden'
+      // })
       // 初始化歌单状态
-      isShowListFlag = false
+      // isShowListFlag = false
+      innerAudioContext.pause()
     }
   }
 })
