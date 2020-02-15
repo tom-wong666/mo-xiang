@@ -1,2 +1,5 @@
 <!--miniprogram/pages/moXiangCapital/moXiangCapital.wxml-->
-<text>moXiangCapital.wxml</text>
+<view class="capital-view">
+  <text class="result">{{capitalResult}}</text>
+  <input class="input-element" maxlength="15" bind:input="bindKeyInput" placeholder="0" value="0" type="digit" focus="true"/>
+</view>

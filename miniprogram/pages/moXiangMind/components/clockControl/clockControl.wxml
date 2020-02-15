@@ -4,7 +4,7 @@
     <text class="count-status">{{countStatus}}</text>
     <text class="balance-time">{{balanceTime}}</text>
   </view>
-  <progress percent="{{balancePercent}}" stroke-width="12" border-radius="6"></progress>
+  <progress percent="{{balancePercent}}" stroke-width="12" border-radius="6" activeColor="#07c160" backgroundColor="#ff677d"></progress>
   <button class="control-status" type="primary" bind:tap="controlTimer">{{controlStatus}}</button>
 <button class="give-up" type="warn" bind:tap="backToMind">放弃</button>
 </view>

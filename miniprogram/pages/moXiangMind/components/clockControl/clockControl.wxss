@@ -1,6 +1,7 @@
 /* miniprogram/pages/moXiangMind/components/clockControl/clockControl.wxss */
 .clock-view {
   font-size: 50rpx; 
+  padding: 0 10rpx;
 }
 .text-view {
   display: flex;
@@ -17,4 +18,5 @@
 }
 .give-up {
   margin-top: 100rpx;
+  background: #ccc !important;
 }

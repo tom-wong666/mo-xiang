@@ -1,1 +1,23 @@
 /* miniprogram/pages/moXiangCapital/moXiangCapital.wxss */
+.capital-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100rpx; 
+  font-weight: bold;
+  font-size: 40rpx;
+}
+.result {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20rpx 5rpx;
+}
+.input-element {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 20rpx 5rpx;
+}

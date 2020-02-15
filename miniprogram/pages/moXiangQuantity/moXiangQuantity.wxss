@@ -1,1 +1,22 @@
 /* miniprogram/pages/moXiangQuantity/moXiangQuantity.wxss */
+.quantity-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-element {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #ccc;
+  padding: 20rpx 5rpx;
+}
+.result {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 20rpx 5rpx;
+  font-weight: bold;
+  font-size: 40rpx;
+}

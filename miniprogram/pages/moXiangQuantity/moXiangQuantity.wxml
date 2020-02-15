@@ -1,2 +1,5 @@
 <!--miniprogram/pages/moXiangQuantity/moXiangQuantity.wxml-->
-<text>miniprogram/pages/moXiangQuantity/moXiangQuantity.wxml</text>
+<view class="quantity-view">
+  <textarea class="input-element" maxlength="10000" bind:input="bindKeyInput" placeholder="请粘贴或者输入需要统计的文字以计算" focus="true" confirm-type="done"/>
+  <text class="result">{{stringResult}}</text>
+</view>

@@ -1,11 +1,11 @@
 {
   "pages": [
+    "pages/moXiangQuantity/moXiangQuantity",
+    "pages/moXiangCapital/moXiangCapital",
     "pages/moXiangMind/moXiangMind",
     "pages/moXiangMind/components/clockControl/clockControl",
     "pages/moXiangMusic/moXiangMusic",
-    "pages/moXiangVideo/moXiangVideo",
-    "pages/moXiangCapital/moXiangCapital",
-    "pages/moXiangQuantity/moXiangQuantity"
+    "pages/moXiangVideo/moXiangVideo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

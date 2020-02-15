@@ -4,6 +4,6 @@
     <text>放下手机，用一刻钟陪陪身边的人吧！</text>
   </view>
   <view class="view-control">
-    <navigator url="/pages/moXiangMind/components/clockControl/clockControl" class="navigator" hover-class="navigator-hover">开始计时</navigator>
+    <navigator url="/pages/moXiangMind/components/clockControl/clockControl" class="navigator">开始计时</navigator>
   </view>
 </view>
