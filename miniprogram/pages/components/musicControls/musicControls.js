@@ -8,18 +8,7 @@ let musicIndex = 0
 let isMusicOnPlay = false
 let musicPlayTextSRC = 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/播放.png'
 let isShowListFlag = false
-let musicList = [
-    { name: '漂洋过海来看你', author: '周深', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/周深 - 漂洋过海来看你.mp3' },
-    { name: '爱你', author: '王贰浪', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/王贰浪 - 爱你.mp3' },
-    { name: '成都', author: '赵雷', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/赵雷 - 成都.mp3' },
-  { name: '往后余生', author: '马良', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/马良 - 往后余生原创(demo).mp3' },
-  { name: '感谢你曾经来过', author: '周思涵', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/Ayo97 - 感谢你曾来过.mp3' },
-  { name: '全部都是你', author: 'Drigon', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/Dragon Pig - 全部都是你.mp3' },
-  { name: '光年之外', author: '邓紫棋', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/G.E.M.邓紫棋 - 光年之外.mp3' },
-  { name: '世界上的另一个我', author: '阿肆', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/阿肆 - 世界上的另一个我.mp3' },
-  { name: '海盗船长', author: '风子', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/风子 - 海盗船长.mp3' },
-  { name: '你打不过我吧', author: '跟风超人', url: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/music/跟风超人 - 你打不过我吧.mp3' }
-  ]
+let musicList = [] 
 Component({
   /**
    * 组件的属性列表
@@ -38,8 +27,10 @@ Component({
     playNextMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/下一首.png',
     repeatMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/重播.png',
     showHideListSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/歌单.png',
-    musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
-    musicNameList: musicList.map(_ => _.author + '-' + _.name),
+    // musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
+    musicInfo: '',
+    // musicNameList: musicList.map(_ => _.author + '-' + _.name),
+    musicNameList: [],
     musicNameListClass: 'music-list music-list-hidden',
     musicIndex: musicIndex,
     musicDacing: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/嗨.png'
@@ -171,21 +162,23 @@ Component({
 
   lifeTimes: {
     attached: function() {
-      console.log('进入attached')
+      
     }
   },
 
   pageLifetimes: {
     show: function() {
-      // 同步相关文本
-      // this.setData({
-      //   playStatus: musicPlayTextSRC,
-      //   musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
-      //   playLastMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/上一首.png',
-      //   playNextMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/下一首.png',
-      //   repeatMusicSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/重播.png',
-      //   showHideListSRC: 'cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/img/歌单.png'
-      // })
+      // 获取播放列表
+      if (musicList.length === 0) {
+        const db = wx.cloud.database()
+        db.collection('mo_xiang_music').get().then(res => {
+          musicList = res.data
+          this.setData({
+            musicInfo: musicList[musicIndex].author + '-' + musicList[musicIndex].name,
+            musicNameList: musicList.map(_ => _.author + '-' + _.name)
+          })
+        })
+      } 
       // 如果显示的时候音乐处于播放状态，则播放音乐
       if (isMusicOnPlay === true) {
         isMusicOnPlay = false
@@ -193,18 +186,7 @@ Component({
       }
     },
     hide: function () {
-      // 重置相关文本
-      // this.setData({
-      //   playStatus: '',
-      //   musicInfo: '',
-      //   playLastMusicSRC: '',
-      //   playNextMusicSRC: '',
-      //   repeatMusicSRC: '',
-      //   showHideListSRC: '',
-      //   musicNameListClass: 'music-list music-list-hidden'
-      // })
-      // 初始化歌单状态
-      // isShowListFlag = false
+      // 停止播放
       innerAudioContext.pause()
     }
   }
