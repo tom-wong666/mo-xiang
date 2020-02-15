@@ -1,0 +1,5 @@
+<!--miniprogram/pages/moXiangVideo/playVideo/playVideo.wxml-->
+<video class="video-player" autoplay="true" loop="true" show-mute-btn="true" poster="{{poster}}" src="{{videoInfo.src}}"></video>
+<text class="video-text title" bind:tap="playVideo">{{videoInfo.title}}</text>
+<text class="video-text">默享视频 | {{videoInfo.type}}</text>
+<text class="video-text">{{videoInfo.detail}}</text>

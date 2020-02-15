@@ -5,7 +5,8 @@
     "pages/moXiangQuantity/moXiangQuantity",
     "pages/moXiangCapital/moXiangCapital",
     "pages/moXiangMind/moXiangMind",
-    "pages/moXiangMind/components/clockControl/clockControl"
+    "pages/moXiangMind/components/clockControl/clockControl",
+    "pages/moXiangVideo/playVideo/playVideo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

@@ -1,0 +1,10 @@
+/* miniprogram/pages/moXiangVideo/playVideo/playVideo.wxss */
+.title {
+  font-weight: bold;
+}
+.video-player {
+  width: 100%;
+}
+.video-text {
+  display: block;
+}

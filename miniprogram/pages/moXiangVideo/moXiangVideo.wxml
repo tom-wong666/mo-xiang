@@ -1,15 +1,13 @@
 <!--miniprogram/pages/moXiangVideo/moXiangVideo.wxml-->
 <view class="view-video">
-  <view class="video-item">
-    <video class="video-player" src="cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/video/捉妖记2-坏妖王来袭.mp4"></video>
-    <text class="video-text">标题：捉妖记2-坏妖王来袭</text>
-    <text class="video-text">分类 | 00:52</text>
-    <text class="video-text">详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述</text>
-  </view>
-  <view class="video-item">
-    <video class="video-player" src="cloud://mo-xiang-wx-yun.6d6f-mo-xiang-wx-yun-1301177803/source/video/生活大爆炸-父母对弈.mp4"></video>
-    <text class="video-text">生活大爆炸-父母对弈</text>
-    <text class="video-text">分类 | 00:52</text>
-    <text class="video-text">详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述详细描述</text>
+  <view class="video-item" wx:for="{{videoList}}" wx:key="id" data-video-info="{{item}}" bind:tap="playVideo">
+    <!-- <video class="video-player" src="{{item.src}}"></video> -->
+    <view class="image-container">
+      <image class="poster-image" src="{{item.poster}}" mode="aspectFill"></image>
+      <text class="play-time">{{item.playTime}}</text>
+    </view>
+    <text class="video-text title">{{item.title}}</text>
+    <text class="video-text">默享视频 | {{item.type}}</text>
+    <!-- <text class="video-text">{{item.detail}}</text> -->
   </view>
 </view>

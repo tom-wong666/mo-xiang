@@ -4,6 +4,29 @@
 }
 .video-item {
   margin-bottom: 20rpx;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10rpx;
+
+}
+.image-container {
+  display: flex;
+  position: relative;
+}
+.poster-image {
+  width: 780rpx;
+  height: 346rpx;
+}
+.play-time {
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  background: #000;
+  color: #fff;
+  padding: 3rpx 6rpx;
+  border-radius: 6rpx;
+}
+.title {
+  font-weight: bold;
 }
 .video-player {
   width: 100%;
